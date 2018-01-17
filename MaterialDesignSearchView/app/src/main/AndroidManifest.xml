@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="br.com.trmasolucoes.tcmaterialdesign">
+
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/Theme.MyTheme">
+
+
+        <meta-data android:name="android.app.default_searchable"
+            android:value="br.com.trmasolucoes.tcmaterialdesign.SearchableActivity"/>
+
+        <provider
+            android:authorities="br.com.trmasolucoes.tcmaterialdesign.provider.SearchableProvider"
+            android:name="br.com.trmasolucoes.tcmaterialdesign.provider.SearchableProvider" />
+
+        <activity
+            android:windowSoftInputMode="adjustPan|adjustNothing"
+            android:name="br.com.trmasolucoes.tcmaterialdesign.MainActivity"
+            android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
+        <activity
+            android:name="br.com.trmasolucoes.tcmaterialdesign.SecondActivity"
+            android:label="@string/title_activity_second"/>
+        <activity
+            android:windowSoftInputMode="adjustPan|adjustNothing"
+            android:name="br.com.trmasolucoes.tcmaterialdesign.CarActivity"
+            android:label="@string/title_activity_car"/>
+        <activity
+            android:name="br.com.trmasolucoes.tcmaterialdesign.TransitionActivity_A"
+            android:label="@string/title_activity_transition"/>
+        <activity
+            android:name="br.com.trmasolucoes.tcmaterialdesign.TransitionActivity_B"
+            android:label="@string/title_activity_transition"/>
+
+        <activity
+            android:windowSoftInputMode="adjustPan|adjustNothing"
+            android:name="br.com.trmasolucoes.tcmaterialdesign.SearchableActivity"
+            android:label="@string/title_activity_transition"
+            android:launchMode="singleTop">
+
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH"/>
+            </intent-filter>
+
+            <meta-data android:name="android.app.searchable"
+                android:resource="@xml/searchable"/>
+
+        </activity>
+    </application>
+
+</manifest>
